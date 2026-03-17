@@ -1,44 +1,62 @@
-# Liman MYS 2.0 – Kurulum ve Yönetim Script’i
+# LimanMYS2.0 — Server Setup & Management Script
 
-**Açık Kaynak Yazılım Geliştirme** dönem projesi. Liman MYS 2.0 sunucusu için parametre tabanlı kurulum, kaldırma ve sıfırlama işlemlerini yapan bir shell script’idir.
+> Parameter-based shell script for Liman MYS 2.0 server installation, removal, and reset operations.
 
-## Parametreler
+[![Language](https://img.shields.io/badge/language-Bash-4EAA25)](https://www.gnu.org/software/bash/)
+[![Platform](https://img.shields.io/badge/platform-Linux-FCC624)](https://www.linux.org/)
+[![License](https://img.shields.io/badge/license-open%20source-green)](#)
 
-| Parametre | Açıklama |
-|-----------|----------|
-| `build` | Liman MYS 2.0 kurulumunu başlatır |
-| `remove` | Liman kurulumunu kaldırır |
-| `admin` | Admin şifresini sıfırlar |
-| `reset` | Kullanıcı şifresini sıfırlar |
-| `help` | Script kullanım bilgisi ve parametreleri listeler |
+---
 
-Hiç parametre verilmezse kullanıcıya hata mesajı gösterilir ve `help` komutunun çalıştırılması önerilir.
+## Overview
 
-## Gereksinimler
+LimanMYS2.0 is a parameter-driven shell script that automates the installation, removal, and password reset operations for a Liman MYS 2.0 server environment. Each operation is handled as a named parameter, making the script simple to use and extend.
 
-- Bash ortamı
-- Liman MYS 2.0 ile uyumlu bir Linux ortamı
+---
 
-## Çalıştırma
+## Parameters
 
-Script’i doğrudan çalıştırmak için önce çalıştırma izni verin:
+| Parameter | Description |
+|-----------|-------------|
+| `build`   | Initiates the Liman MYS 2.0 installation |
+| `remove`  | Removes the existing Liman installation |
+| `admin`   | Resets the admin password |
+| `reset`   | Resets a user password |
+| `help`    | Lists all available parameters and usage instructions |
+
+If no parameter is provided, the script displays an error message and recommends running the `help` command.
+
+---
+
+## Requirements
+
+- Bash shell environment
+- A Linux distribution compatible with Liman MYS 2.0
+
+---
+
+## Usage
+
+Grant execution permission and run:
 
 ```bash
 chmod +x liman.sh
-./liman.sh [parametre]
+./liman.sh [parameter]
 ```
 
-Örnek:
+**Examples:**
 
 ```bash
-./liman.sh build    # Kurulum
-./liman.sh help     # Yardım
-./liman.sh admin    # Admin şifresi sıfırlama
+./liman.sh build    # Start installation
+./liman.sh admin    # Reset admin password
+./liman.sh help     # Show usage information
 ```
 
-Her işlem sonunda script, işlemin başarılı olup olmadığı hakkında bilgi verir (örneğin: “PostgreSQL kuruldu” / “kurulamadı”).
+After each operation, the script reports success or failure (e.g., `"PostgreSQL installed"` / `"installation failed"`).
 
-## Proje bilgisi
+---
 
-- **Ders:** Atatürk Üniversitesi – Açık Kaynak Yazılım Geliştirme (Dönem Projesi)
-- **Sahip:** [@mustafaceliker](https://github.com/mustafaceliker)
+## Project Info
+
+- **Course:** Atatürk University — Open Source Software Development (Term Project)
+- **Author:** [@mustafaceliker](https://github.com/mustafaceliker)
